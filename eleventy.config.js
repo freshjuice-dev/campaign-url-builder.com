@@ -277,7 +277,7 @@ export default async function (eleventyConfig) {
     // Copy the contents of the `public` folder to the output folder
     // ------------------------------------------------------------
     eleventyConfig.addPassthroughCopy({
-        "./src/public/": "/"
+        "./_static/": "/"
     });
 
 
