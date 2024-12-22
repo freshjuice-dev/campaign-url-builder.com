@@ -1,0 +1,70 @@
+@layer base {
+  label {
+    @apply mb-2 block text-base font-medium;
+  }
+
+  fieldset {
+    @apply relative;
+  }
+
+  [type="text"],
+  [type="email"],
+  [type="url"],
+  [type="password"],
+  [type="number"],
+  [type="date"],
+  [type="datetime-local"],
+  [type="month"],
+  [type="search"],
+  [type="tel"],
+  [type="time"],
+  [type="week"],
+  [multiple],
+  textarea,
+  select,
+  .FormControl {
+    @apply block w-full rounded-full border border-gray-300 bg-zinc-100 dark:bg-zinc-300 text-gray-900 placeholder:text-zinc-500;
+
+    /* font-size: 1rem; */
+    /* line-height: 1.5rem; */
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    min-height: 44px;
+  }
+  .radio-rows {
+    .inputs-list {
+      @apply flex;
+
+      li {
+        @apply mr-12;
+      }
+    }
+  }
+
+  [type="radio"] {
+    @apply mr-2;
+  }
+
+  .is-invalid,
+  .error,
+  .invalid,
+  [aria-invalid="true"] {
+    @apply border-red-500 text-red-700 placeholder-red-700 focus:border-red-500 focus:outline-none focus:ring-red-500;
+  }
+
+  [type="submit"] {
+    /*@apply rounded-full bg-blue-600 rounded-full shadow-md dark:shadow-red-400/0;*/
+    /*@apply hover:-translate-y-0.5 hover:shadow-lg dark:hover:shadow-red-400/25;*/
+    /*@apply px-3.5 py-2.5 cursor-pointer;*/
+    /*@apply text-sm font-semibold text-white;*/
+    /*@apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600;*/
+    @apply px-6 py-2 bg-blue-600 rounded-full shadow-md dark:shadow-red-400/0;
+    @apply text-white font-semibold text-sm;
+    @apply inline-flex items-center justify-center gap-3;
+    @apply border-blue-600 border-2;
+    @apply transition-[transform,box-shadow] duration-300 ease-in-out;
+    @apply hover:-translate-y-0.5 hover:shadow-lg dark:hover:shadow-red-400/25;
+  }
+}

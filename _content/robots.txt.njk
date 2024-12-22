@@ -1,0 +1,10 @@
+---
+layout: nada
+permalink: /robots.txt
+eleventyExcludeFromCollections: true
+---
+# Build: {{ build.hash.short }} at {{ build.timestamp.formatted }}
+User-agent: *
+Allow: /
+
+Sitemap: {{ build.url }}/sitemap.xml

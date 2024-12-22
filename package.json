@@ -1,0 +1,81 @@
+{
+  "name": "campaign-url-builder.com",
+  "version": "1.0.0",
+  "description": "The official website of the Campaign URL Builder",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "clean:site": "rimraf './_site' './_temp'",
+    "debug:11ty": "DEBUG=Eleventy* npx @11ty/eleventy",
+    "watch:11ty": "npx @11ty/eleventy --serve --quiet",
+    "build:11ty": "npx @11ty/eleventy",
+    "build:js": "npx esbuild ./_js/main.js --outfile=./_site/js/main.js --bundle --minify",
+    "watch:js": "npx esbuild ./_js/main.js --outfile=./_site/js/main.js --bundle --watch --sourcemap",
+    "watch:tailwind": "npx tailwindcss --postcss -i ./_css/main.css -o ./_site/css/main.css --watch",
+    "build:tailwind": "npx tailwindcss --postcss -i ./_css/main.css -o ./_site/css/main.css --minify",
+    "start": "ELEVENTY_ENV=development npm-run-all --parallel watch:*",
+    "build": "ELEVENTY_ENV=production npm-run-all --serial build:js* build:tailwind build:11ty",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/freshjuice-dev/campaign-url-builder.com.git"
+  },
+  "keywords": [
+    "utm",
+    "campaign-url-builder",
+    "11ty",
+    "eleventy",
+    "alpinejs",
+    "tailwindcss",
+    "cloudflare",
+    "freshjuice"
+  ],
+  "author": {
+    "name": "Alex Zappa",
+    "email": "alex@zappa.dev",
+    "url": "https://alex.zappa.dev/"
+  },
+  "contributors": [
+    {
+      "name": "Alex Zappa",
+      "email": "alex@zappa.dev",
+      "url": "https://alex.zappa.dev/"
+    }
+  ],
+  "license": "MIT",
+  "private": true,
+  "bugs": {
+    "url": "https://github.com/freshjuice-dev/campaign-url-builder.com/issues"
+  },
+  "homepage": "https://github.com/freshjuice-dev/campaign-url-builder.com#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy-img": "^5.0.0",
+    "@11ty/eleventy-plugin-rss": "^2.0.2",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@tailwindcss/forms": "^0.5.9",
+    "@tailwindcss/typography": "^0.5.15",
+    "@zachleat/table-saw": "^1.0.6",
+    "alpinejs": "^3.14.7",
+    "autoprefixer": "^10.4.20",
+    "eleventy-plugin-phosphoricons": "^1.3.0",
+    "eleventy-plugin-speculation-rules": "^1.1.0",
+    "esbuild": "^0.24.2",
+    "html-minifier-terser": "^7.2.0",
+    "js-yaml": "^4.1.0",
+    "luxon": "^3.5.0",
+    "markdown-it-anchor": "^9.2.0",
+    "npm-run-all": "^4.1.5",
+    "plausible-tracker": "^0.3.9",
+    "postcss-cli": "^11.0.0",
+    "postcss-discard-comments": "^7.0.3",
+    "postcss-easy-import": "^4.0.0",
+    "postcss-merge-rules": "^7.0.4",
+    "postcss-nesting": "^13.0.1",
+    "rimraf": "^6.0.1",
+    "slugify": "^1.6.6",
+    "tailwindcss": "^3.4.16"
+  }
+}
