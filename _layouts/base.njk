@@ -54,6 +54,10 @@
   <meta name="twitter:image" content="{{ metadata.url }}/og-image.png">
   <meta name="twitter:image:alt" content="{{ title or metadata.title }}">
 
+  {# Plausible Analytics #}
+  <script defer data-domain="campaign-url-builder.com" src="https://firebird.beastful.org/js/script.file-downloads.hash.outbound-links.pageview-props.revenue.tagged-events.js"></script>
+  <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+
   {# Styles #}
   <link rel="preload" href="/css/main.css?v={{ build.hash.short }}" as="style">
   <link rel="stylesheet" href="/css/main.css?v={{ build.hash.short }}">

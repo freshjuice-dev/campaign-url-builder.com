@@ -1,13 +1,6 @@
 import "@zachleat/table-saw";
-import Plausible from "plausible-tracker";
 import Alpine from 'alpinejs';
 import debugLog from "./_debugLog";
-import colorScheme from "./_detectColorScheme";
-
-const {trackEvent, trackPageview, enableAutoOutboundTracking} = Plausible({
-  domain: "campaign-url-builder.com",
-  apiHost: "https://firebird.beastful.org",
-});
 
 window.Alpine = Alpine;
 
@@ -64,38 +57,5 @@ Alpine.data("CampaignURLBuilder", () => ({
 
 
 domLoaded(() => {
-  // track page view
-  trackPageview(
-    {},
-    {
-      props: {
-        title: document.title,
-        url: location.href,
-        path: location.pathname,
-        referrer: document.referrer,
-        prefersColorScheme: colorScheme(),
-        userAgent: navigator.userAgent,
-        deviceWidth: window.innerWidth
-      },
-    }
-  );
-
-  enableAutoOutboundTracking();
-
-  // track 404 page
-  if (document.body.classList.contains("page-404")) {
-    trackEvent("404", {
-      props: {
-        title: document.title,
-        url: location.href,
-        path: location.pathname,
-        referrer: document.referrer,
-        prefersColorScheme: colorScheme(),
-        userAgent: navigator.userAgent,
-        deviceWidth: window.innerWidth
-      },
-    });
-  }
-
   Alpine.start();
 });
