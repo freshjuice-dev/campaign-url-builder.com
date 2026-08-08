@@ -1,5 +1,6 @@
 # [Campaign URL Builder](https://campaign-url-builder.com/)
 
+> ⚠️ PRIVATE REPOSITORY — Proprietary and confidential. See [LICENSE](LICENSE).
 Campaign URL Builder is a free tool that helps you create custom campaign URLs for your marketing campaigns. It allows you to track the performance of your campaigns in Google Analytics by adding UTM parameters to your URLs.
 
 ## License
